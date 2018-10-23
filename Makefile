@@ -1,5 +1,5 @@
 PKG_NAME := absl-py
-URL = https://files.pythonhosted.org/packages/16/db/cce5331638138c178dd1d5fb69f3f55eb3787a12efd9177177ae203e847f/absl-py-0.5.0.tar.gz
+URL = https://files.pythonhosted.org/packages/fa/ef/1fa0376563b1e0495301ada8e881d88b7ebfda433f6b31f44447fe6ef795/absl-py-0.6.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
