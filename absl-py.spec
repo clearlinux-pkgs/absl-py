@@ -4,26 +4,34 @@
 #
 Name     : absl-py
 Version  : 0.8.1
-Release  : 30
+Release  : 31
 URL      : https://files.pythonhosted.org/packages/3b/72/e6e483e2db953c11efa44ee21c5fdb6505c4dffa447b4263ca8af6676b62/absl-py-0.8.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/3b/72/e6e483e2db953c11efa44ee21c5fdb6505c4dffa447b4263ca8af6676b62/absl-py-0.8.1.tar.gz
-Summary  : Abseil Python Common Libraries
+Summary  : Abseil Python Common Libraries, see https://github.com/abseil/abseil-py.
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: absl-py-license = %{version}-%{release}
 Requires: absl-py-python = %{version}-%{release}
 Requires: absl-py-python3 = %{version}-%{release}
-Requires: enum34
 Requires: six
 BuildRequires : buildreq-distutils3
-BuildRequires : enum34
 BuildRequires : six
 
 %description
-# Abseil Python Common Libraries
 This repository is a collection of Python library code for building Python
-applications. The code is collected from Google's own Python code base, and has
-been extensively tested and used in production.
+        applications. The code is collected from Google's own Python code base, and has
+        been extensively tested and used in production.
+        
+        ## Features
+        
+        * Simple application startup
+        * Distributed commandline flags system
+        * Custom logging module with additional features
+        * Testing utilities
+        
+        ## Getting Started
+        
+        ### Installation
 
 %package license
 Summary: license components for the absl-py package.
@@ -59,8 +67,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570638995
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1570827142
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -73,7 +80,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/absl-py
-cp LICENSE %{buildroot}/usr/share/package-licenses/absl-py/LICENSE
+cp %{_builddir}/absl-py-0.8.1/LICENSE %{buildroot}/usr/share/package-licenses/absl-py/2b8b815229aa8a61e483fb4ba0588b8b6c491890
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -84,7 +91,7 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/absl-py/LICENSE
+/usr/share/package-licenses/absl-py/2b8b815229aa8a61e483fb4ba0588b8b6c491890
 
 %files python
 %defattr(-,root,root,-)
