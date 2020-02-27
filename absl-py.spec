@@ -4,7 +4,7 @@
 #
 Name     : absl-py
 Version  : 0.9.0
-Release  : 35
+Release  : 36
 URL      : https://files.pythonhosted.org/packages/1a/53/9243c600e047bd4c3df9e69cfabc1e8004a82cac2e0c484580a78a94ba2a/absl-py-0.9.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/1a/53/9243c600e047bd4c3df9e69cfabc1e8004a82cac2e0c484580a78a94ba2a/absl-py-0.9.0.tar.gz
 Summary  : Abseil Python Common Libraries
@@ -19,9 +19,65 @@ BuildRequires : six
 
 %description
 # Abseil Python Common Libraries
+
 This repository is a collection of Python library code for building Python
 applications. The code is collected from Google's own Python code base, and has
 been extensively tested and used in production.
+
+## Features
+
+* Simple application startup
+* Distributed commandline flags system
+* Custom logging module with additional features
+* Testing utilities
+
+## Getting Started
+
+### Installation
+
+To install the package, simply run:
+
+```bash
+pip install absl-py
+```
+
+Or install from source:
+
+```bash
+python setup.py install
+```
+
+### Running Tests
+
+To run Abseil tests, you can clone the git repo and run
+[bazel](https://bazel.build/):
+
+```bash
+git clone https://github.com/abseil/abseil-py.git
+cd abseil-py
+bazel test absl/...
+```
+
+### Example Code
+
+Please refer to
+[smoke_tests/sample_app.py](https://github.com/abseil/abseil-py/blob/master/smoke_tests/sample_app.py)
+as an example to get started.
+
+## Documentation
+
+See the [Abseil Python Developer Guide](https://abseil.io/docs/python/).
+
+## Future Releases
+
+The current repository includes an initial set of libraries for early adoption.
+More components and interoperability with Abseil C++ Common Libraries
+will come in future releases.
+
+## License
+
+The Abseil Python library is licensed under the terms of the Apache
+license. See [LICENSE](LICENSE) for more information.
 
 %package license
 Summary: license components for the absl-py package.
@@ -44,6 +100,7 @@ python components for the absl-py package.
 Summary: python3 components for the absl-py package.
 Group: Default
 Requires: python3-core
+Provides: pypi(absl-py)
 
 %description python3
 python3 components for the absl-py package.
@@ -58,7 +115,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1576702387
+export SOURCE_DATE_EPOCH=1582844614
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
