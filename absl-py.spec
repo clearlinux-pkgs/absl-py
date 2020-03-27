@@ -4,10 +4,10 @@
 #
 Name     : absl-py
 Version  : 0.9.0
-Release  : 37
+Release  : 38
 URL      : https://files.pythonhosted.org/packages/1a/53/9243c600e047bd4c3df9e69cfabc1e8004a82cac2e0c484580a78a94ba2a/absl-py-0.9.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/1a/53/9243c600e047bd4c3df9e69cfabc1e8004a82cac2e0c484580a78a94ba2a/absl-py-0.9.0.tar.gz
-Summary  : Abseil Python Common Libraries, see https://github.com/abseil/abseil-py.
+Summary  : Abseil Python Common Libraries
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: absl-py-license = %{version}-%{release}
@@ -18,20 +18,10 @@ BuildRequires : buildreq-distutils3
 BuildRequires : six
 
 %description
+# Abseil Python Common Libraries
 This repository is a collection of Python library code for building Python
-        applications. The code is collected from Google's own Python code base, and has
-        been extensively tested and used in production.
-        
-        ## Features
-        
-        * Simple application startup
-        * Distributed commandline flags system
-        * Custom logging module with additional features
-        * Testing utilities
-        
-        ## Getting Started
-        
-        ### Installation
+applications. The code is collected from Google's own Python code base, and has
+been extensively tested and used in production.
 
 %package license
 Summary: license components for the absl-py package.
@@ -70,7 +60,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583530935
+export SOURCE_DATE_EPOCH=1585319246
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
