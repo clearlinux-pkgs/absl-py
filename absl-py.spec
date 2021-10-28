@@ -4,7 +4,7 @@
 #
 Name     : absl-py
 Version  : 0.15.0
-Release  : 56
+Release  : 57
 URL      : https://files.pythonhosted.org/packages/25/d9/22a0b010487da88200c3f0672c67e892b5399b7a13d105d3863511399f6e/absl-py-0.15.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/25/d9/22a0b010487da88200c3f0672c67e892b5399b7a13d105d3863511399f6e/absl-py-0.15.0.tar.gz
 Summary  : Abseil Python Common Libraries, see https://github.com/abseil/abseil-py.
